@@ -17,7 +17,7 @@ defined in a Galois field (limited in the range of a certain prime P)
 2. 如何将一个整数分为左半和右半？
 3. 原有的轮函数输出与左半异或（模2加），从而实现可逆运算，现在应该采用何种可逆操作？
 
-![image-20220125115828813](C:/Users/zjh/AppData/Roaming/Typora/typora-user-images/image-20220125115828813.png)
+![image-20220125120939427](README.assets/image-20220125120939427.png)
 
 对于上述问题的解答思路如上图。
 
@@ -49,16 +49,16 @@ F(Right，RoundKey) =( Right-1) * 常量 + RoundKey
 
 在第3部分的（6）中，将明文改变一位时密文的变化数量记录结果保存在了data.csv中。查看其中内容如下：
 
-![img](file:///C:\Users\zjh\AppData\Local\Temp\ksohtml\wpsE219.tmp.jpg) 
+![image-20220125120957721](README.assets/image-20220125120957721.png) 
 
 为了能够验证其分布情况，使用Python中的matplotlib工具绘制频数直方图，结果如下：
 
-![img](file:///C:\Users\zjh\AppData\Local\Temp\ksohtml\wpsE21A.tmp.jpg) 
+![image-20220125121006141](README.assets/image-20220125121006141.png) 
 
 可以看到，密文在0-48范围内的分布情况是相当均匀的；共1000000个密文，每个密文的出现次数都大约是1000000/49=20408次。
 
 另外，这里尝试了把轮函数换为单纯的轮密钥模加，结果如下图：
 
-![img](file:///C:\Users\zjh\AppData\Local\Temp\ksohtml\wpsE22B.tmp.jpg) 
+![image-20220125121016795](README.assets/image-20220125121016795.png) 
 
 因此，仅使用轮密钥模加的轮函数也是可以实现密文均匀分布的，但安全性较弱。
